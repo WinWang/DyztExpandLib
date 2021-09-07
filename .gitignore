@@ -1,0 +1,48 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/.idea/inspectionProfiles/
+/common-libs/build/
+/emchatsdk/build/
+/QuoteSdk/build/
+/QuoteUi/build/
+
+*.apk
+*.ap_
+
+*.dex
+
+*.class
+
+# generated directory
+bin/
+gen/
+
+# gradle files and folders.
+.gradle/
+build
+/*/build
+gradlew
+
+# local project setting files.
+local.properties
+
+proguard/
+
+# unnecessary extension files.
+.classpath
+.project
+.settings
+
+# unused local disk files.
+pom.xml.*
+*.iml
+*.DS_Store
+
+# screen short
+captures

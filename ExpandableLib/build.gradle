@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply from: '../library.gradle'
+android {
+
+    compileSdkVersion project.cfg.compileSdkVersion
+//    buildToolsVersion "26.0.2"
+
+
+    defaultConfig {
+        minSdkVersion project.cfg.minSdkVersion
+        targetSdkVersion project.cfg.targetSdkVersion
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            multiDexEnabled true
+        }
+        preview {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // to support annotations such as @NonNull
+//    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation project.lbr.appcompat
+}
+
+// for maven central deployment
+//apply from: 'https://raw.githubusercontent.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

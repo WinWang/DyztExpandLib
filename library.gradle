@@ -1,0 +1,172 @@
+// 此文件统一配置主项目和子项目所依赖的第三方库的版本
+def retrofitVersion = '2.9.0'
+def okHttpVersion = '4.9.0'
+def rxLifecycle = '2.1.0'
+def constraint = '2.0.4'
+def multidex = '2.0.1'
+def corektx = "1.3.2"
+def Vcoroutines = "1.5.1"
+def lifecycle = "2.3.1"
+def koinVersion = "2.2.0"
+def ktxActivity = "1.2.3"
+def ktxFragment = "1.3.3"
+def materialVersion = "1.2.1"
+def appcompatVersion = "1.2.0"
+def autoDisposeVersion = "0.8.0"
+def recycleviewVersion = "1.2.1"
+def exifinferfaceVersion = "1.3.3"
+
+project.ext.lbr = [
+        // Android-Support
+        appcompat             : "androidx.appcompat:appcompat:$appcompatVersion",
+//        cardview_v7           : "androidx.cardview:cardview:$cardviewVersion",
+        recyclerview_v7       : "androidx.recyclerview:recyclerview:$recycleviewVersion",
+        exifinterface         : "androidx.exifinterface:exifinterface:$exifinferfaceVersion",
+        multidex              : "androidx.multidex:multidex:$multidex",
+        constraint            : "androidx.constraintlayout:constraintlayout:$constraint",
+        material              : "com.google.android.material:material:$materialVersion",
+
+        //KOTLIN
+        core_ktx              : "androidx.core:core-ktx:$corektx",
+        activity              : "androidx.activity:activity-ktx:$ktxActivity",
+        fragment              : "androidx.fragment:fragment-ktx:$ktxFragment",
+
+        //lifecycle(lifecycle-extensions 中的 API 已弃用。您可以为特定 Lifecycle 工件添加所需的依赖项。)
+        lifecycle             : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle",
+        lifecycle_viewmodel   : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
+        lifecycle_livedata    : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
+        lifecycle_compiler    : "androidx.lifecycle:lifecycle-compiler:$lifecycle",
+        lifecycle_save_state  : "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle",
+        //// alternately - if using Java8, use the following instead of lifecycle-compiler(用了这个就不用compiler)
+        lifecycle_common      : "androidx.lifecycle:lifecycle-common-java8:$lifecycle",
+
+//        koin
+        koinScope             : "org.koin:koin-androidx-scope:$koinVersion",
+        koinViewmodel         : "org.koin:koin-androidx-viewmodel:$koinVersion",
+        koinExt               : "org.koin:koin-androidx-ext:$koinVersion",
+        koinFragment          : "org.koin:koin-androidx-fragment:$koinVersion",
+
+        coroutinesAndroid     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$Vcoroutines",
+
+
+        rxbinding             : 'com.jakewharton.rxbinding2:rxbinding:2.1.1',
+
+        // Rx-lifecycle
+        rxlifecycle_android   : "com.trello.rxlifecycle2:rxlifecycle-android:$rxLifecycle",
+        rxlifecycle_components: "com.trello.rxlifecycle2:rxlifecycle-components:$rxLifecycle",
+
+        // RxJava
+        rxjava2               : 'io.reactivex.rxjava2:rxjava:2.2.2',
+        rxandroid2            : 'io.reactivex.rxjava2:rxandroid:2.1.0',
+        rxrelay               : 'com.jakewharton.rxrelay2:rxrelay:2.0.0',
+
+        autoDispose           : "com.uber.autodispose:autodispose:$autoDisposeVersion",
+        autoDisposeComponent  : "com.uber.autodispose:autodispose-android-archcomponents:$autoDisposeVersion",
+
+        // OkHttp-Retrofit
+        okhttp                : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+        logging_interceptor   : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+        adapter_rxjava2       : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+        converter_gson        : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+
+        // Google libs
+        google_guava          : 'com.google.guava:guava:20.0',
+        google_gson           : 'com.google.code.gson:gson:2.8.7',
+        google_protobuf       : 'com.google.protobuf:protobuf-java:3.1.0',
+
+        // 阿里系
+        fastjson              : 'com.alibaba:fastjson:1.1.72.android',
+
+        // Glide
+        glide                 : 'com.github.bumptech.glide:glide:4.9.0',
+        glide_transform       : "jp.wasabeef:glide-transformations:4.1.0",
+
+        // 轮播图
+        banner                : 'com.youth.banner:banner:2.1.0',
+
+        // 统计分析
+        sensors_analytics     : 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:5.2.1',
+
+
+        jpush                 : 'cn.jiguang.sdk:jpush:4.2.8',
+        jpush_core            : 'cn.jiguang.sdk:jcore:2.9.0',
+        jpush_huawei          : 'cn.jiguang.sdk.plugin:huawei:4.2.8',
+        jpush_xiaomi          : 'cn.jiguang.sdk.plugin:xiaomi:4.2.8',
+        huawei_push           : 'com.huawei.hms:push:5.3.0.301',
+
+        wechat                : 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+',
+
+        //圆形图片
+        "circleImage"         : 'de.hdodenhof:circleimageview:3.0.0',
+        //SmartRefreshlayout
+        "refresh"             : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.2",
+        RxPermission          : 'com.github.tbruyelle:rxpermissions:0.10.2',
+        //EventBus
+        EventBus              : 'org.greenrobot:eventbus:3.1.1',
+
+        autoSize              : 'me.jessyan:autosize:1.2.1',
+
+        guava                 : "com.google.guava:guava:24.1-jre",
+        phtotview             : "com.github.chrisbanes:PhotoView:2.0.0",
+        scaleImage            : "com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0",
+        exo                   : "com.google.android.exoplayer:exoplayer-core:2.9.6",
+        exoUi                 : "com.google.android.exoplayer:exoplayer-ui:2.9.6",
+        exoDash               : "com.google.android.exoplayer:exoplayer-dash:2.9.6",
+        qmui                  : "com.qmuiteam:qmui:1.4.0",
+        quoteSDK              : "com.jds.quote2sdk:quote-sdk2:1.0.10",
+        quoteUI               : "com.jds.quote2sdk:ui:1.0.4",
+        //AspectJ
+        aspectJ               : 'org.aspectj:aspectjrt:1.8.13',
+
+        //rxCache套装
+        rxCache               : 'com.github.VictorAlbertos.RxCache:runtime:1.8.3-2.x',
+        cacheGson             : 'com.github.VictorAlbertos.Jolyglot:gson:0.0.4',
+
+        //richText
+        richText              : 'com.zzhoujay.richtext:richtext:3.0.8',
+        html                  : 'com.zzhoujay:html:1.0.2',
+
+        //Im
+        imclient              : 'com.jds.im.client:IMClient:1.1.4',
+        pinnedSection         : "com.oushangfeng:PinnedSectionItemDecoration:1.3.2",
+        pagerGrid             : "com.gcssloop.recyclerview:pagerlayoutmanager:2.3.8",
+
+        cBanner               : 'com.bigkoo:ConvenientBanner:2.1.4',
+        barlayout             : 'com.github.yuruiyin:AppbarLayoutBehavior:1.0.4',
+        viewHelper            : 'com.dyhdyh:view-helper:1.0.3',
+        logger                : 'com.orhanobut:logger:1.15',
+        loadsir               : 'com.kingja.loadsir:loadsir:1.3.8',
+        RVLayoutM             : 'rouchuan.viewpagerlayoutmanager:viewpagerlayoutmanager:2.0.22',
+        danmuku               : 'com.github.ctiao:DanmakuFlameMaster:0.5.3',
+        aviloading            : 'com.wang.avi:library:2.1.3',
+        flexboxlayout         : 'com.google.android:flexbox:1.0.0',
+        lottie                : 'com.airbnb.android:lottie:2.7.0',
+        cymChad               : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50',
+        gsonFactory           : 'com.github.getActivity:GsonFactory:5.2',
+        leakcanary            : "com.squareup.leakcanary:leakcanary-android:2.4",
+        toasty                : "com.github.GrenderG:Toasty:1.4.2",
+        zxing                 : "com.google.zxing:core:3.4.1",
+        sensorSDK             : "com.sensorsdata.analytics.android:SensorsAnalyticsSDK:4.4.9",
+        smart_swipe           : "com.billy.android:smart-swipe:1.1.0"
+
+
+]
+project.ext.cfg = [
+        "compileSdkVersion": 30,
+        "minSdkVersion"    : 21,
+        "targetSdkVersion" : 30
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
