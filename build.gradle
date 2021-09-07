@@ -18,6 +18,20 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
