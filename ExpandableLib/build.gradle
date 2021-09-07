@@ -1,6 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply from: '../library.gradle'
+
+group='com.github.WinWang'
+
 android {
     compileSdkVersion project.cfg.compileSdkVersion
 
