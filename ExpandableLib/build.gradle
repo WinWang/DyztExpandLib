@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'
 apply from: '../library.gradle'
 
 group='com.github.WinWang'
@@ -16,11 +16,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             multiDexEnabled true
-        }
-        preview {
-            minifyEnabled false
-            zipAlignEnabled false
-            shrinkResources false
         }
     }
 
