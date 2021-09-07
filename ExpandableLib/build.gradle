@@ -1,10 +1,7 @@
 apply plugin: 'com.android.library'
 apply from: '../library.gradle'
 android {
-
     compileSdkVersion project.cfg.compileSdkVersion
-//    buildToolsVersion "26.0.2"
-
 
     defaultConfig {
         minSdkVersion project.cfg.minSdkVersion
@@ -22,14 +19,18 @@ android {
             shrinkResources false
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // to support annotations such as @NonNull
-//    implementation 'androidx.annotation:annotation:1.1.0'
     implementation project.lbr.appcompat
 }
 
-// for maven central deployment
-//apply from: 'https://raw.githubusercontent.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
