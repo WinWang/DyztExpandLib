@@ -10,12 +10,12 @@ android {
     defaultConfig {
         minSdkVersion project.cfg.minSdkVersion
         targetSdkVersion project.cfg.targetSdkVersion
-        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            multiDexEnabled true
         }
     }
 
@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.lbr.appcompat
 }
 
@@ -38,7 +38,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.WinWang'
                 artifactId = 'DyztTabLib'
-                version = '1.0.0'
+                version = '1.20.0'
             }
         }
     }
