@@ -10,29 +10,20 @@ android {
     defaultConfig {
         minSdkVersion project.cfg.minSdkVersion
         targetSdkVersion project.cfg.targetSdkVersion
+        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-//    kotlinOptions {
-//        jvmTarget = '1.8'
-//    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.lbr.appcompat
 }
-
 
 afterEvaluate {
     publishing {
@@ -40,7 +31,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.WinWang'
-                artifactId = 'DyztExpandLib'
+                artifactId = 'DyztTabLib'
                 version = '1.0.0'
             }
         }
