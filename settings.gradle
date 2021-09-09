@@ -2,3 +2,6 @@ rootProject.name = "DyztSDKLib"
 include ':app'
 include ':ExpandableLib'
 include ':LibFlycoTabLayout'
+include ':LibFloatwindow'
+include ':LibTimeSelect'
+include ':LibLoadsir'

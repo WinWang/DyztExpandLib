@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+apply from: '../library.gradle'
+
+group = 'com.github.WinWang'
+
+android {
+    compileSdkVersion project.cfg.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion project.cfg.minSdkVersion
+        targetSdkVersion project.cfg.targetSdkVersion
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project.lbr.constraint
+    implementation project.lbr.appcompat
+
+}
+
