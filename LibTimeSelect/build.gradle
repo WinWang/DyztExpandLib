@@ -23,3 +23,16 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.lbr.appcompat
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.WinWang'
+                artifactId = 'libTimeSelect'
+                version = project.libVersion
+            }
+        }
+    }
+}

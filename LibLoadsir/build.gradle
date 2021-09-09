@@ -25,3 +25,16 @@ dependencies {
 
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.WinWang'
+                artifactId = 'LibLoadsir'
+                version = project.libVersion
+            }
+        }
+    }
+}
+

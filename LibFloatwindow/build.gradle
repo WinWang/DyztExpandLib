@@ -29,3 +29,17 @@ dependencies {
     implementation project.lbr.appcompat
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.WinWang'
+                artifactId = 'LibFloatwindow'
+                version = project.libVersion
+            }
+        }
+    }
+}
+
+
