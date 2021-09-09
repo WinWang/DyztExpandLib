@@ -44,7 +44,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 //    implementation 'com.github.WinWang:DyztExpandLib:v1.1.2'
 
-    implementation 'com.github.WinWang.DyztExpandLib:DyztExpandLib:-SNAPSHOT'
-    implementation 'com.github.WinWang.DyztExpandLib:DyztTabLib:-SNAPSHOT'
+//    implementation 'com.github.WinWang.DyztExpandLib:DyztExpandLib:v1.1.7'
+//    implementation 'com.github.WinWang.DyztExpandLib:DyztTabLib:v1.1.7'
 
 }
