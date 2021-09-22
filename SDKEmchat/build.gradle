@@ -42,3 +42,16 @@ dependencies {
     implementation project.lbr.appcompat
     implementation project.lbr.google_gson
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.WinWang'
+                artifactId = 'SDKEmchat'
+                version = project.libVersion
+            }
+        }
+    }
+}
