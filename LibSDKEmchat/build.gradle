@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 apply from: '../library.gradle'
+
+group = 'com.github.WinWang'
+
 android {
     compileSdkVersion project.cfg.compileSdkVersion
 
@@ -43,13 +47,14 @@ dependencies {
     implementation project.lbr.google_gson
 }
 
+
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.WinWang'
-                artifactId = 'SDKEmchat'
+                artifactId = 'libSDKEmchat'
                 version = project.libVersion
             }
         }
