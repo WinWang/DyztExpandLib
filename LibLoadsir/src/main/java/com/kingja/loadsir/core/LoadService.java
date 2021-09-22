@@ -1,7 +1,6 @@
 package com.kingja.loadsir.core;
 
 import android.content.Context;
-import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -22,7 +21,7 @@ public class LoadService<T> {
     private LoadLayout loadLayout;
     private Convertor<T> convertor;
 
-    LoadService(Convertor<T> convertor,LoadLayout loadLayout,LoadSir.Builder builder) {
+    LoadService(Convertor<T> convertor, LoadLayout loadLayout, LoadSir.Builder builder) {
         this.convertor = convertor;
         this.loadLayout = loadLayout;
         initCallback(builder);
@@ -105,5 +104,17 @@ public class LoadService<T> {
     public LoadService<T> setCallBack(Class<? extends Callback> callback, Transport transport) {
         loadLayout.setCallBack(callback, transport);
         return this;
+    }
+
+    public void destroy() {
+        try {
+            loadLayout.removeAllViews();
+            ViewGroup parent = (ViewGroup) loadLayout.getParent();
+            if (parent != null) {
+                parent.removeView(loadLayout);
+            }
+        } catch (Exception ignored) {
+
+        }
     }
 }

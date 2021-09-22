@@ -11,10 +11,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Parcelable;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.TypedValue;
@@ -24,6 +20,9 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.flyco.tablayout.utils.FragmentChangeManager;
@@ -158,7 +157,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
         mDividerPadding = ta.getDimension(R.styleable.SegmentTabLayout_tl_divider_padding, 0);
 
         mTextSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textsize, sp2px(13f));
-        mTextSelectSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textSelectSize, sp2px(13));
+        mTextSelectSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textSelectSize, mTextSize);
         mTextSelectColor = ta.getColor(R.styleable.SegmentTabLayout_tl_textSelectColor, Color.parseColor("#ffffff"));
         mTextUnselectColor = ta.getColor(R.styleable.SegmentTabLayout_tl_textUnselectColor, mIndicatorColor);
         mTextBold = ta.getInt(R.styleable.SegmentTabLayout_tl_textBold, TEXT_BOLD_NONE);
@@ -231,7 +230,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
             }
         });
 
-        /** 每一个Tab的布局参数 */
+        /* 每一个Tab的布局参数 */
         LinearLayout.LayoutParams lp_tab = mTabSpaceEqual ?
                 new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f) :
                 new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
@@ -311,7 +310,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
 
         if (!mIndicatorAnimEnable) {
             if (mCurrentTab == 0) {
-                /**The corners are ordered top-left, top-right, bottom-right, bottom-left*/
+                //The corners are ordered top-left, top-right, bottom-right, bottom-left
                 mRadiusArr[0] = mIndicatorCornerRadius;
                 mRadiusArr[1] = mIndicatorCornerRadius;
                 mRadiusArr[2] = 0;
@@ -321,7 +320,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
                 mRadiusArr[6] = mIndicatorCornerRadius;
                 mRadiusArr[7] = mIndicatorCornerRadius;
             } else if (mCurrentTab == mTabCount - 1) {
-                /**The corners are ordered top-left, top-right, bottom-right, bottom-left*/
+                //The corners are ordered top-left, top-right, bottom-right, bottom-left
                 mRadiusArr[0] = 0;
                 mRadiusArr[1] = 0;
                 mRadiusArr[2] = mIndicatorCornerRadius;
@@ -331,7 +330,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
                 mRadiusArr[6] = 0;
                 mRadiusArr[7] = 0;
             } else {
-                /**The corners are ordered top-left, top-right, bottom-right, bottom-left*/
+                //The corners are ordered top-left, top-right, bottom-right, bottom-left
                 mRadiusArr[0] = 0;
                 mRadiusArr[1] = 0;
                 mRadiusArr[2] = 0;
@@ -342,7 +341,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
                 mRadiusArr[7] = 0;
             }
         } else {
-            /**The corners are ordered top-left, top-right, bottom-right, bottom-left*/
+            //The corners are ordered top-left, top-right, bottom-right, bottom-left
             mRadiusArr[0] = mIndicatorCornerRadius;
             mRadiusArr[1] = mIndicatorCornerRadius;
             mRadiusArr[2] = mIndicatorCornerRadius;
@@ -631,14 +630,13 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
 
     public TextView getTitleView(int tab) {
         View tabView = mTabsContainer.getChildAt(tab);
-        TextView tv_tab_title = (TextView) tabView.findViewById(R.id.tv_tab_title);
-        return tv_tab_title;
+        return (TextView) tabView.findViewById(R.id.tv_tab_title);
     }
 
     //setter and getter
     // show MsgTipView
-    private Paint mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private SparseArray<Boolean> mInitSetMap = new SparseArray<>();
+    private final Paint mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final SparseArray<Boolean> mInitSetMap = new SparseArray<>();
 
     /**
      * 显示未读消息
@@ -723,8 +721,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
             position = mTabCount - 1;
         }
         View tabView = mTabsContainer.getChildAt(position);
-        MsgView tipView = (MsgView) tabView.findViewById(R.id.rtv_msg_tip);
-        return tipView;
+        return (MsgView) tabView.findViewById(R.id.rtv_msg_tip);
     }
 
     private OnTabSelectListener mListener;
@@ -759,8 +756,8 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
         public float right;
     }
 
-    private IndicatorPoint mCurrentP = new IndicatorPoint();
-    private IndicatorPoint mLastP = new IndicatorPoint();
+    private final IndicatorPoint mCurrentP = new IndicatorPoint();
+    private final IndicatorPoint mLastP = new IndicatorPoint();
 
     class PointEvaluator implements TypeEvaluator<IndicatorPoint> {
         @Override
