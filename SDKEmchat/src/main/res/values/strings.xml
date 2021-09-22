@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">EMChatSDK</string>
+
+
+
+    <string name="data_exception">数据异常，请重试</string>
+    <string name="course">课程</string>
+    <string name="transaction_knowledge">交易知识</string>
+    <string name="trading_rules">交易规则 | 黄金术语</string>
+    <string name="contract_knowledge">合约知识</string>
+    <string name="product_overview">品种概述 | 交易费用</string>
+    <string name="more_topics">更多专题</string>
+    <string name="hot_video">热门视频</string>
+    <string name="novice_topics">新手专题</string>
+    <string name="course_content">课程内容</string>
+    <string name="more_video">更多视频</string>
+    <string name="see_more">查看更多>></string>
+    <string name="more_content">更多内容</string>
+    <string name="advanced">进阶</string>
+    <string name="di_qi">第%s期</string>
+
+    <string name="kechengtuijian">推荐课程</string>
+    <string name="jichuzhishi">基础知识</string>
+    <string name="touzifenxi">投资分析</string>
+    <string name="touzishizhan">投资实战</string>
+    <string name="zhujiangren">主讲人: %s</string>
+    <string name="count_time">%1$s万  %2$s</string>
+
+    <string name="wuxiaodeshipingdizhi">无效的视频地址</string>
+    <string name="meirifuli">每日福利</string>
+    <string name="jiaoyidashi">交易大师</string>
+    <string name="jinrikandian">今日看点</string>
+    <string name="dianjiguanzhu">点击关注</string>
+    <string name="dianjijinru">点击进入</string>
+    <string name="yiguanzhu">(已关注)</string>
+    <string name="dingyuereshu">%s人已关注</string>
+    <string name="shouye">首页</string>
+    <string name="neirongchuchu">内容出处 %s</string>
+    <string name="xinshoukecheng">新手课程</string>
+    <string name="shenqingzhong">(申请中)</string>
+    <string name="shiping">视频</string>
+    <string name="tiaoguo">%sS</string>
+    <string name="tiaoguo_">跳过</string>
+    <string name="quote_empty">--</string>
+    <string name="jinyinbi">金银比</string>
+    <string name="jinbabi">金钯比</string>
+    <string name="yinyijia">TD银溢价</string>
+    <string name="waihui">外汇</string>
+    <string name="mingchengdaima">名称代码</string>
+    <string name="zuixin">最新价</string>
+    <string name="zhangdiefu">涨跌幅</string>
+    <string name="caijingrii">财经日历</string>
+    <string name="zhongyao">重要</string>
+    <string name="qianzhi">前值：</string>
+    <string name="yuqi">预期：</string>
+    <string name="gongbu">公布：</string>
+    <string name="xiushitixing">休市提醒</string>
+    <string name="jingjishuju">经济数据</string>
+    <string name="caijingdadshi">财经大事</string>
+    <string name="buzhongyao"></string>
+    <string name="gong_tiao">共%s条</string>
+    <string name="quanbuhangqing">全部行情</string>
+    <string name="beijingshijian">%1$s年%2$s月(北京时间)</string>
+    <string name="chichangshuju">ETF持仓数据</string>
+    <string name="fanhuijintian">回到今天</string>
+    <string name="dakazhuangtai">大咖状态</string>
+    <string name="zuihouyiye">抱歉,暂无更多数据</string>
+    <string name="jiaoyizhong">交易中</string>
+    <string name="celueshijian">策略时间：%s</string>
+    <string name="duodan">多单</string>
+    <string name="kongdan">空单</string>
+    <string name="chengcang">%s手</string>
+    <string name="chakanxiangqing">查看详情</string>
+    <string name="yinsizhengcemianzeshengming">隐私政策/免责声明</string>
+    <string name="shouye_mianze_shengming">本平台涉及的任何内容及操作仅供您参考和学习使用，均来源于第三方，与平台无涉，不构成投资建议，不具有投资咨询性质，不构成对任何金融产品的购买、抛售或持有，不作为您做出任何投资的依据，不承诺您获得投资收益，本平台不作任何担保。\n您应自主做出投资决策，自行承担投资风险和损失，投资有风险，入市须谨慎！</string>
+    <string name="wenzhangzhuanlan">文章专栏</string>
+    <string name="kechengliebiao">课程列表</string>
+    <string name="qunliao">交流群</string>
+    <string name="guanzhu">关注</string>
+    <string name="guankanshu">阅读</string>
+    <string name="dianzan">点赞</string>
+    <string name="wenzhang">文章</string>
+    <string name="max_message">99+</string>
+    <string name="yuedu_count">阅读 %s</string>
+    <string name="zan">赞</string>
+
+
+    <string name="file_open">打开文件</string>
+    <string name="file_download">下载文件</string>
+    <string name="file_downloading">下载中</string>
+
+    <string name="send_success">已发送</string>
+    <string name="send_message">发送一条消息</string>
+    <string name="send_image">发送一张图片</string>
+    <string name="send_audio">发送一段语音</string>
+    <string name="send_video">发送一段视频</string>
+    <string name="send_file">发送一个文件</string>
+
+    <string name="receive_message">发来一条消息</string>
+    <string name="receive_image">发来一张图片</string>
+    <string name="receive_audio">发来一段语音</string>
+    <string name="receive_video">发来一段视频</string>
+    <string name="receive_file">发送一个文件</string>
+
+    <string name="message_image_label">[图片]</string>
+    <string name="message_audio_label">[语音]</string>
+    <string name="message_video_label">[视频]</string>
+    <string name="message_file_label">[文件]</string>
+    <string name="message_action_copy">复制</string>
+    <string name="message_action_delete">删除</string>
+    <string name="message_copyed">已复制</string>
+
+    <string name="input_send_fun_photo">照片</string>
+    <string name="input_send_fun_camera">相机</string>
+    <string name="input_voice_press_down">按住 说话</string>
+    <string name="input_voice_press_up">松开 结束</string>
+    <string name="input_voice_time_short">录音时间太短!</string>
+    <string name="input_voice_start_short">录音设备启动失败!</string>
+    <string name="input_voice_recorder_fail">录音失败,没有录音权限!</string>
+    <string name="input_voice_not_start">录音时间太短</string>
+    <string name="input_validate_null_username">账号不能为空!</string>
+    <string name="input_validate_null_password">密码不能为空!</string>
+    <string name="input_validate_null_keywords">关键字不能为空!</string>
+    <string name="validate_selected_zero">请至少选择一个客户!</string>
+    <string name="validate_unread_message">不能删除，还有未读消息!</string>
+
+    <string name="recoder_moveup_cancel">手指上滑,取消发送</string>
+    <string name="recoder_actionup_cancel">松开手指,取消发送</string>
+    <string name="loading_waiting">努力加载中...</string>
+    <string name="network_error">网络连接异常,请检查网络</string>
+
+
+    <string name="input_send">发送</string>
+    <string name="input_hint">输入内容</string>
+    <string name="send_fail_retry">发送失败请重试!</string>
+    <string name="send_fail_empty">发送内容不能为空!</string>
+    <string name="init_fail">客服初始化失败请重试!</string>
+    <string name="get_fail">获取客服失败请重试!</string>
+
+    <string name="notification_channel_3_id">103</string>
+    <string name="notification_channel_3_name">客服通知</string>
+    <string name="notification_channel_3_desc">客服消息通知</string>
+
+
+    <string name="confirm_default">发送给客服进行咨询</string>
+</resources>

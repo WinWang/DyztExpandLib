@@ -44,11 +44,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 //    implementation 'com.github.WinWang:DyztExpandLib:v1.1.2'
 
-    implementation 'com.github.WinWang.DyztExpandLib:DyztExpandLib:v1.1.8'
-    implementation 'com.github.WinWang.DyztExpandLib:DyztTabLib:v1.1.8'
-    implementation 'com.github.WinWang.DyztExpandLib:DyztTabLib:v1.1.8'
-    implementation 'com.github.WinWang.DyztExpandLib:LibFloatwindow:v1.1.8'
-    implementation 'com.github.WinWang.DyztExpandLib:LibLoadsir:v1.1.8'
-    implementation 'com.github.WinWang.DyztExpandLib:libTimeSelect:v1.1.8'
+    implementation 'com.github.WinWang.DyztExpandLib:DyztExpandLib:v' + project.depVersion
+    implementation 'com.github.WinWang.DyztExpandLib:DyztTabLib:v' + project.depVersion
+    implementation 'com.github.WinWang.DyztExpandLib:LibFloatwindow:v' + project.depVersion
+    implementation 'com.github.WinWang.DyztExpandLib:LibLoadsir:v' + project.depVersion
+    implementation 'com.github.WinWang.DyztExpandLib:libTimeSelect:v' + project.depVersion
 
 }

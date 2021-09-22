@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply from: '../library.gradle'
+android {
+    compileSdkVersion project.cfg.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion project.cfg.minSdkVersion
+        targetSdkVersion project.cfg.targetSdkVersion
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi"
+        }
+
+
+        sourceSets {
+            main {
+                java.srcDirs = ['src/main/java']
+                jni.srcDirs = []
+                jniLibs.srcDirs = ['libs']
+                res.srcDirs = ['src/main/res']
+                assets.srcDirs = ['src/main/assets']
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project.lbr.appcompat
+    implementation project.lbr.google_gson
+}
