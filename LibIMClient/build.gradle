@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+apply from: '../library.gradle'
+
+group = 'com.github.WinWang'
+
+android {
+
+    compileSdkVersion project.cfg.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion project.cfg.minSdkVersion
+        targetSdkVersion project.cfg.targetSdkVersion
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project.lbr.fastjson
+    implementation project.lbr.appcompat
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.WinWang'
+                artifactId = 'LibIMClient'
+                version = project.libVersion
+            }
+        }
+    }
+}
+
