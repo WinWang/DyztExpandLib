@@ -9,12 +9,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
+import android.text.TextUtils;
+
+import androidx.annotation.Nullable;
 
 import com.jindashi.imandroidclient.api.IMClient;
 import com.jindashi.imandroidclient.model.AutoLinkMode;
 import com.jindashi.imandroidclient.utils.LogUtils;
-import com.jindashi.imandroidclient.utils.StringUtils;
 
 
 /**
@@ -78,7 +79,7 @@ public class IMNetStatusService extends Service {
                 if (SocketClient.getInstance().isAutoCheckNetChange() && IMClient.getInstance().getNetWorkChangeInter().isActivitiesResume()) {
                     LogUtils.e("SocketNetStatusService", "app foreground");
                     if (SocketClient.getInstance().getAutoLinkMode() == AutoLinkMode.MODE_ACTIVITY) {
-                        if (StringUtils.isEmpty(IMClient.getInstance().getNetWorkChangeInter().getTargetActivity()))
+                        if (TextUtils.isEmpty(IMClient.getInstance().getNetWorkChangeInter().getTargetActivity()))
                             return;
                         if (SocketClient.getInstance().getAutoLinkActivityName().equals(IMClient.getInstance().getNetWorkChangeInter().getTargetActivity())) {
                             LogUtils.e("SocketNetStatusService", "app foreground,AutoLinkMode.MODE_ACTIVITY ,targetActivity:" + IMClient.getInstance().getNetWorkChangeInter().getTargetActivity());

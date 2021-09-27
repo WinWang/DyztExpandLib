@@ -50,5 +50,6 @@ dependencies {
     implementation 'com.github.WinWang.DyztExpandLib:LibLoadsir:v' + project.depVersion
     implementation 'com.github.WinWang.DyztExpandLib:libTimeSelect:v' + project.depVersion
     implementation 'com.github.WinWang.DyztExpandLib:libSDKEmchat:v' + project.depVersion
+    implementation 'com.github.WinWang.DyztExpandLib:LibIMClient:v' + project.depVersion
 
 }

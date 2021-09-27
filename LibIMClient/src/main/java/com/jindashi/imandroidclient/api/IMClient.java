@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.text.TextUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
@@ -21,20 +22,10 @@ import com.jindashi.imandroidclient.socket.SocketWriter;
 import com.jindashi.imandroidclient.utils.LogUtils;
 import com.jindashi.imandroidclient.utils.MD5Utils;
 import com.jindashi.imandroidclient.utils.SocketUtils;
-import com.jindashi.imandroidclient.utils.StringUtils;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.InetSocketAddress;
-import java.util.List;
 
-/**
- * @ClassName: IMClient
- * @Description: java类作用描述
- * @Author: xxy
- * @CreateDate: 2019/7/16 15:23
- * @Version: 1.0
- */
 public class IMClient {
     private IMConnectOption imConnectOption;
     private IMCallBack imCallBack;
@@ -128,11 +119,11 @@ public class IMClient {
             error(IMError.imUnInitOption);
             return;
         }
-        if (StringUtils.isEmpty(imConnectOption.getUid()) || imConnectOption.getUserType() < 1) {
+        if (TextUtils.isEmpty(imConnectOption.getUid()) || imConnectOption.getUserType() < 1) {
             error(IMError.imUserInfoInitError);
             return;
         }
-//        if (StringUtils.isEmpty(imConnectOption.getUid()) || StringUtils.isEmpty(imConnectOption.getNickname()) || imConnectOption.getUserType() < 1) {
+//        if (TextUtils.isEmpty(imConnectOption.getUid()) || TextUtils.isEmpty(imConnectOption.getNickname()) || imConnectOption.getUserType() < 1) {
 //            error(IMError.imUserInfoInitError);
 //            return;
 //        }
@@ -167,7 +158,7 @@ public class IMClient {
                 LogUtils.d("---------IM接收消息---------");
                 try {
                     String result = new String(data, "UTF-8");
-                    if (StringUtils.isEmpty(result))
+                    if (TextUtils.isEmpty(result))
                         return;
                     BaseMsg<String> realBaseMsg = JSON.parseObject(result, new TypeReference<BaseMsg<String>>() {
                     });
@@ -264,7 +255,7 @@ public class IMClient {
      * @param message
      */
     public void sendMessage(final String message) {
-        if (StringUtils.isEmpty(message)) {
+        if (TextUtils.isEmpty(message)) {
             error(IMError.imSendMessageError);
             return;
         }
@@ -283,7 +274,7 @@ public class IMClient {
 //     * @param message
 //     */
 //    public void sendChatMessage(String message) {
-//        if (!StringUtils.isEmpty(message)) {
+//        if (!TextUtils.isEmpty(message)) {
 //            UserBean userBean = new UserBean();
 //            userBean.setUid(imConnectOption.getUid());
 //            userBean.setUserType(imConnectOption.getUserType());
@@ -347,7 +338,7 @@ public class IMClient {
      */
     private void auth(String response) {
         try {
-            if (null == imConnectOption || StringUtils.isEmpty(imConnectOption.getUid()) || StringUtils.isEmpty(imConnectOption.getSCOKET_AUTHKEY()) || StringUtils.isEmpty(imConnectOption.getRoomId())) {
+            if (null == imConnectOption || TextUtils.isEmpty(imConnectOption.getUid()) || TextUtils.isEmpty(imConnectOption.getSCOKET_AUTHKEY()) || TextUtils.isEmpty(imConnectOption.getRoomId())) {
                 error(IMError.authError);
             }
 //            BaseMsg<Auth1> realBaseMsg = new Gson().fromJson(response, new TypeToken<BaseMsg<Auth1>>() {
@@ -358,7 +349,7 @@ public class IMClient {
                 return;
             }
             String token = realBaseMsg.getResult().getSeed();
-            if (!StringUtils.isEmpty(token)) {
+            if (!TextUtils.isEmpty(token)) {
                 token = token + imConnectOption.getSCOKET_AUTHKEY();
                 AuthBean authBean = new AuthBean();
                 authBean.setCmd(CmdEnum.CMD_AUTH2.getCmd());

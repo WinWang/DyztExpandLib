@@ -1,11 +1,12 @@
 package com.jindashi.imandroidclient.socket;
 
+import android.text.TextUtils;
+
 import com.alibaba.fastjson.JSON;
 import com.jindashi.imandroidclient.model.BaseMsg;
 import com.jindashi.imandroidclient.model.CmdEnum;
 import com.jindashi.imandroidclient.utils.LogUtils;
 import com.jindashi.imandroidclient.utils.SocketUtils;
-import com.jindashi.imandroidclient.utils.StringUtils;
 
 import java.io.OutputStream;
 import java.util.concurrent.Callable;
@@ -37,7 +38,7 @@ public class SocketHeart implements Callable<Integer> {
             Thread.sleep(HEART_BEAT_INTERVAL);
             try {
                 if (SocketClient.getInstance().getState() == SocketState.OK) {
-                    if (StringUtils.isEmpty(getHeart()))
+                    if (TextUtils.isEmpty(getHeart()))
                         break;
                     SocketUtils.writeTo(out, getHeart());
                     out.flush();
@@ -54,7 +55,7 @@ public class SocketHeart implements Callable<Integer> {
     }
 
     private String getHeart() {
-        if (StringUtils.isEmpty(heart)) {
+        if (TextUtils.isEmpty(heart)) {
             BaseMsg heartMsg = new BaseMsg();
             heartMsg.setCmd(CmdEnum.CMD_HEART.getCmd());
             return heart = JSON.toJSONString(heartMsg);

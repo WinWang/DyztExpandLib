@@ -1,10 +1,11 @@
 package com.jindashi.imandroidclient.socket;
 
+import android.text.TextUtils;
+
 import com.jindashi.imandroidclient.api.IMConnectOption;
 import com.jindashi.imandroidclient.api.SocketCallBack;
 import com.jindashi.imandroidclient.model.AutoLinkMode;
 import com.jindashi.imandroidclient.utils.LogUtils;
-import com.jindashi.imandroidclient.utils.StringUtils;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -93,7 +94,7 @@ public class SocketClient implements Callable<Integer> {
             return;
         }
         state.set(SocketState.NO_LINK);
-        if (!StringUtils.isEmpty(Ip)) {
+        if (!TextUtils.isEmpty(Ip)) {
             InetSocketAddress inetSocketAddress = new InetSocketAddress(Ip, Port);
             connect(inetSocketAddress);
         }
