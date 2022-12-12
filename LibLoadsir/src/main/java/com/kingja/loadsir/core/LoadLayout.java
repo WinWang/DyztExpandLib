@@ -106,6 +106,7 @@ public class LoadLayout extends FrameLayout {
                     callbacks.get(key).onAttach(context, rootView);
                 }
                 preCallback = status;
+                break;
             }
         }
         curCallback = status;
